@@ -1,13 +1,19 @@
-import { useState } from "react"
+import { useMemo, useState } from "react"
 
 
 export default function BudgetForm() {
 
     const [budget, setBudget] = useState(0)
 
+    // Recuperar los números
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setBudget(e.target.valueAsNumber)
     }
+
+    // Input Opacitity
+    const isValid = useMemo(() => {
+        return isNaN(budget) || budget <= 0
+    }, [budget])
 
 
     return (
@@ -31,7 +37,8 @@ export default function BudgetForm() {
             <input
                 type="submit"
                 value='Definir presupuesto'
-                className="bg-blue-600 hover:bg-blue-700 cursor-pointer w-full p-2 text-white font-black uppercase"
+                className="bg-blue-600 hover:bg-blue-700 cursor-pointer w-full p-2 text-white font-black uppercase disabled:opacity-40"
+                disabled={isValid}
             />
 
         </form>
