@@ -21,6 +21,7 @@ export const BudgetProvider = ({ children }: BudgetProviderProps) => {
 
     return (
         <BudgetContext.Provider
+            // value: lo que se va a poder consumir en nuestros componentes utilizando useContex
             value={{
                 state,
                 dispatch
