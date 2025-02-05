@@ -24,4 +24,6 @@ export const budgetReducer = (
             ...state,
             budget: action.payload.budget
         }
+
+    return state
 }
