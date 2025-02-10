@@ -62,7 +62,9 @@ export const budgetReducer = (
         const expense = createExpense(action.payload.expense)
         return {
             ...state,
-            expense: [...state.expenses, expense]
+            expenses: [...state.expenses, expense],
+            //Cerrar modal apenas registremos gastos
+            modal: false
         }
     }
 
