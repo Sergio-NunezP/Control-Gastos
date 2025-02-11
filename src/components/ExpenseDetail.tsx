@@ -55,11 +55,6 @@ export default function ExpenseDetail({ expense }: ExpenseDetailProps) {
                 trailingActions={trailingActions()}
             >
                 <div className="bg-white shadow-lg p-10 w-full border-b border-gray-200 flex  gap-5 items-center">
-                    Cine
-
-                    miércoles, 12 de febrero de 2025
-
-                    $4
                     <div>
                         <img
                             src={`/icono_${categoryInfo.icon}.svg`}
