@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChangeEvent } from "react";
 import { DraftExpense, Value } from "../types";
 import { categories } from "../data/categories";
@@ -20,7 +20,15 @@ export default function ExpenseForm() {
 
     const [error, setError] = useState('')
 
-    const { dispatch } = useBudget()
+    const { dispatch, state } = useBudget()
+
+    useEffect(() => {
+        if (state.editingId) {
+            const editingExpense = state.expenses.filter(currentExpense => currentExpense.id === state.editingId)
+            [0]
+            setExpense(editingExpense)
+        }
+    }, [state.editingId])
 
     //state para el resto
     const handleChange = (e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
