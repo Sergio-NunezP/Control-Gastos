@@ -13,7 +13,7 @@ type BudgetProviderProps = {
     children: ReactNode
 }
 
-// Pontext: Acción de tener el estado global
+//Acción de tener el estado global
 export const BudgetContext = createContext<BudgetContextProps>(null!)
 
 // Provider: van a ser los datos que va a tener el context
