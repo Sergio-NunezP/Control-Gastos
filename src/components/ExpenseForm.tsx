@@ -90,7 +90,7 @@ export default function ExpenseForm() {
 
     return (
         <form className="space-y-5" onSubmit={handleSubmit}>
-            <legend className="uppercase text-center text-2xl font-black border-b-4 border-blue-500 py-2">
+            <legend className="uppercase text-center text-2xl font-black border-b-4 border-emerald-500 py-2">
                 {state.editingId ? 'Guardar Cambios' : 'Nuevo Gasto'}
             </legend>
 
@@ -166,7 +166,7 @@ export default function ExpenseForm() {
             </div>
 
             <input type="submit"
-                className="bg-blue-600 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg"
+                className="bg-emerald-600 cursor-pointer w-full p-2 text-white uppercase font-bold rounded-lg"
                 value={state.editingId ? 'Guardar Cambios' : 'Registrar Gasto'}
             />
 
